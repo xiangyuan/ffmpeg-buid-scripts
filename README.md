@@ -28,3 +28,11 @@ git clone git://source.ffmpeg.org/ffmpeg.git
 
 5、执行./build_armv7s执行就可。
 
+感谢这篇文章
+http://www.tangentsoftworks.com/blog/2012/11/12/how-to-prepare-your-mac-for-ios-development-with-ffmpeg-libraries/
+
+gas-preprocessor.gl https://github.com/mansr/gas-preprocessor
+
+thanks to @mansr @Tangent Team
+
+
