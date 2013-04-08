@@ -33,6 +33,7 @@ http://www.tangentsoftworks.com/blog/2012/11/12/how-to-prepare-your-mac-for-ios-
 
 gas-preprocessor.gl https://github.com/mansr/gas-preprocessor
 
-thanks to @mansr @Tangent Team
+thanks to 
+[mansr](https://github.com/mansr)  
 
 
