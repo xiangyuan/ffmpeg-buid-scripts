@@ -7,7 +7,24 @@ rm armv7s/*.a
 
 make clean
 
-./configure --enable-cross-compile --arch=arm --target-os=darwin --cc=/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc --as='gas-preprocessor/gas-preprocessor.pl /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc' --sysroot=/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk --cpu=cortex-a8 --extra-cflags='-arch armv7s' --extra-ldflags='-arch armv7s' --enable-neon --disable-debug --disable-encoders
+#./configure --enable-cross-compile --arch=arm --target-os=darwin --cc=/Developer/#Platforms/iPhoneOS.platform/Developer/usr/bin/gcc --as='gas-preprocessor/gas-#preprocessor.pl /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc' --sysroot=/#Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk --cpu=cortex-a8 --#extra-cflags='-arch armv7s' --extra-ldflags='-arch armv7s' --enable-neon --disable-debug #--disable-encoders
+
+./configure \
+--prefix=armv7s \
+--disable-ffmpeg \
+--disable-ffplay \
+--disable-ffprobe \
+--disable-ffserver \
+--enable-avresample \
+--enable-cross-compile \
+--sysroot="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk" \
+--target-os=darwin \
+--cc="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc" \
+--extra-cflags="-arch armv7s -mfpu=neon -miphoneos-version-min=4.3" \
+--extra-ldflags="-arch armv7s -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk -miphoneos-version-min=4.3" \
+--arch=arm \
+--cpu=cortex-a9 \
+--enable-pic \
 
 make
 

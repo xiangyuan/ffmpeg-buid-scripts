@@ -7,7 +7,25 @@ rm i386/*.a
 
 make clean
 
-./configure --arch=i386 --extra-cflags='-arch i386' --extra-ldflags='-arch i386'  --disable-encoders --disable-debug --disable-mmx
+#./configure --arch=i386 --extra-cflags='-arch i386' --extra-ldflags='-arch i386'  --#disable-encoders --disable-debug --disable-mmx
+
+./configure \
+--prefix=i386 \
+--disable-ffmpeg \
+--disable-ffplay \
+--disable-ffprobe \
+--disable-ffserver \
+--enable-avresample \
+--enable-cross-compile \
+--sysroot="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk" \
+--target-os=darwin \
+--cc="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc" \
+--extra-cflags="-arch i386" \
+--extra-ldflags="-arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk" \
+--arch=i386 \
+--cpu=i386 \
+--enable-pic \
+--disable-asm \
 
 make
 
